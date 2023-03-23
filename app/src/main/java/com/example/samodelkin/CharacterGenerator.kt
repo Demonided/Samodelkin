@@ -31,6 +31,5 @@ object CharacterGenerator {
         race = race(),
         dex = dex(),
         wis = wis(),
-        str = str()
-    )
+        str = str())
 }
