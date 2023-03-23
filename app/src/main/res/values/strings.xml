@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Samodelkin</string>
+    <string name="name">name</string>
+    <string name="name_player">Madrigal</string>
+    <string name="race">race</string>
+    <string name="race_player">Elf</string>
+    <string name="stats">stats</string>
+    <string name="wisdom">wisdom:</string>
+    <string name="wisdom_size">16</string>
+    <string name="strength">strength:</string>
+    <string name="strength_size">16</string>
+    <string name="dexterity">dexterity:</string>
+    <string name="dexterity_size">16</string>
+    <string name="generate">generate</string>
+</resources>

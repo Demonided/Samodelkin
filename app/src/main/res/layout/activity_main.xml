@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".NewCharacterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/name_player"
+            android:textSize="26sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/race"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/raceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/race_player"
+            android:textSize="26sp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/stats"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:paddingTop="8dp"
+                android:text="@string/wisdom"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/wisdomTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/wisdom_size"
+                android:layout_marginEnd="15sp"
+                android:textSize="26sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:paddingTop="8dp"
+                android:text="@string/strength"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/strengthTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/strength_size"
+                android:layout_marginEnd="15sp"
+                android:textSize="26sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:paddingTop="8dp"
+                android:text="@string/dexterity"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/dexterityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/dexterity_size"
+                android:layout_marginStart="2sp"
+                android:layout_marginEnd="5sp"
+                android:textSize="26sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/generateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/generate"/>
+</LinearLayout>
