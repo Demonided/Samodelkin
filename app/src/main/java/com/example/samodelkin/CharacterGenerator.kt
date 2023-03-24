@@ -14,7 +14,7 @@ object CharacterGenerator {
                                   val race: String,
                                   val dex: String,
                                   val wis: String,
-                                  val str: String)
+                                  val str: String) : java.io.Serializable
 
 
     private fun name() = "${firstName.rand()} ${lastName.rand()}"

@@ -7,17 +7,33 @@ import android.widget.TextView
 import com.example.samodelkin.databinding.ActivityMainBinding
 import org.w3c.dom.Text
 
+private const val CHARACTER_DATA_KEY = "CHARACTER_DATA_KEY"
+
+private var Bundle.characterData
+    get() = getSerializable(CHARACTER_DATA_KEY) as CharacterGenerator.CharacterData
+    set(value) = putSerializable(CHARACTER_DATA_KEY, value)
+
 class MainActivity : AppCompatActivity() {
 
     private var characterData = CharacterGenerator.generate()
     lateinit var binding: ActivityMainBinding
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.characterData = characterData
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
-        setContentView(binding.root)
 
+        characterData = savedInstanceState?.characterData ?:
+                CharacterGenerator.generate()
+
+        displayCharacterData()
+    }
+
+    private fun displayCharacterData() {
         val nameTextView = findViewById<TextView>(R.id.nameTextView)
         val raceTextView = findViewById<TextView>(R.id.raceTextView)
         val dexterityTextView = findViewById<TextView>(R.id.dexterityTextView)
@@ -25,14 +41,7 @@ class MainActivity : AppCompatActivity() {
         val strengthTextView = findViewById<TextView>(R.id.strengthTextView)
         val generateButton = findViewById<Button>(R.id.generateButton)
 
-        initButton()
-
         characterData.run {
-//            binding.dexterityTextView.setOnClickListener { dex }
-//            binding.nameTextView.setOnClickListener { name }
-//            binding.raceTextView.setOnClickListener { race }
-//            binding.strengthTextView.setOnClickListener { str }
-//            binding.wisdomTextView.setOnClickListener { wis }
             nameTextView.text = name
             raceTextView.text = race
             dexterityTextView.text = dex
@@ -40,20 +49,13 @@ class MainActivity : AppCompatActivity() {
             strengthTextView.text = str
         }
 
-        binding.generateButton.setOnClickListener { characterData }
-    }
-
-    private fun initButton() {
-        with(binding) {
-            generateButton.setOnClickListener {
-                characterData.run {
-                    dexterityTextView.setOnClickListener { dex }
-                }
-            }
+        generateButton.setOnClickListener {
+            characterData = CharacterGenerator.generate()
+            displayCharacterData()
         }
+
+
     }
-
-
 }
 
 
